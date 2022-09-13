@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body {margin: 0;}
+		h1{text-align: center;background: skyblue; width: 400px; height: 50px; border-radius: 25px;position:relative; top: 50px ;position: absolute; left: 50%; transform: translate(-50%,-50%);}
+		input{osition:relative; top: 120px ;position: absolute; left: 50%; transform: translate(-50%,-50%);}
+		button{position:relative; top: 150px ;position: absolute; left: 50%; transform: translate(-50%,-50%);}
+		img{display: block;width: 400px;margin: auto; padding-top: 220px;}
+	</style>
+</head>
+<body>
+	<input id = "vol" type="range" max="100"min="0">
+	<h1>공부할 때 듣는 음악</h1>
+	<button id="startBut">study START</button>
+	<img id="study" src="./image1.jpeg">
+	<audio id="musicSnd" src="./swimming.mp3"></audio>
+	<script type="text/javascript">
+
+
+    vol.value = 100;
+	vol.oninput = function(){
+		musicSnd.volume = vol.value/100;
+	};
+		
+   let button = "off";
+		startBut.onclick = function() {
+			if (button == "off") {
+				musicSnd.play()
+				study.src = "./image3.jfif";
+				this.textContent = "study STOP";
+				button = "on";}
+
+			else if (button == "on") {
+				musicSnd.pause();
+				study.src = "./image1.jpeg";
+				this.textContent = "study START";
+				button = "off";
+			}
+
+		
+			
+
+		};
+	</script>
+
+</body>
+</html>
